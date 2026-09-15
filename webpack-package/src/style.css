@@ -1,0 +1,320 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #faf7f2;
+    color: #292521;
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #171411;
+    color: white;
+    padding: 28px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #d39a3d;
+}
+
+header h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: #f4c56b;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+    gap: 12px;
+}
+
+nav a {
+    color: #e9e4dc;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 11px 20px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+}
+
+nav a:hover {
+    color: #171411;
+    background: #f4c56b;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+#content {
+    width: min(1100px, 88%);
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+/* =========================
+   GENERAL PAGE CONTAINER
+========================= */
+
+#content > div {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+#content h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.05;
+    color: #171411;
+    margin-bottom: 22px;
+}
+
+#content h1::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: #d39a3d;
+    margin-top: 18px;
+}
+
+/* =========================
+   HOMEPAGE
+========================= */
+
+#content > div:first-child {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#content > div:first-child h1 {
+    color: #171411;
+}
+
+#content > div:first-child h1::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content > div:first-child p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #6e675f;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* =========================
+   MENU
+========================= */
+
+#content > h1 {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+#content > h1::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+    Each pizza is inside a div.
+*/
+
+#content > h1 ~ div {
+    background: white;
+    border: 1px solid #e8e0d5;
+    border-radius: 18px;
+    padding: 25px 30px;
+    margin: 0 auto 18px;
+    max-width: 750px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+
+    text-align: left;
+
+    box-shadow: 0 8px 25px rgba(40, 30, 20, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+#content > h1 ~ div:hover {
+    transform: translateY(-5px);
+    border-color: #d39a3d;
+    box-shadow: 0 15px 35px rgba(40, 30, 20, 0.1);
+}
+
+#content > h1 ~ div h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #292521;
+}
+
+#content > h1 ~ div p:first-of-type {
+    grid-column: 2;
+    grid-row: 1;
+
+    font-weight: 700;
+    color: #b87820;
+    font-size: 18px;
+}
+
+#content > h1 ~ div p:last-of-type {
+    grid-column: 1 / -1;
+    color: #777067;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+#content > div h1 {
+    text-align: center;
+}
+
+#content > div h1::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content > div h1 + p {
+    text-align: center;
+    color: #777067;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+/* Contact information cards */
+
+#content > div p:not(:first-child) {
+    background: white;
+    border: 1px solid #e8e0d5;
+    border-radius: 14px;
+    padding: 20px 25px;
+    margin: 12px auto;
+    max-width: 550px;
+
+    color: #3d3832;
+    font-size: 16px;
+    font-weight: 500;
+
+    box-shadow: 0 5px 18px rgba(40, 30, 20, 0.04);
+
+    transition: transform 0.2s ease;
+}
+
+#content > div p:not(:first-child):hover {
+    transform: translateX(5px);
+    border-color: #d39a3d;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px 5%;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 9px 13px;
+        font-size: 14px;
+    }
+
+    #content {
+        width: 90%;
+        padding: 55px 0;
+    }
+
+    #content h1 {
+        font-size: 43px;
+    }
+
+    #content > h1 ~ div {
+        padding: 22px;
+        grid-template-columns: 1fr auto;
+    }
+}
+
+@media (max-width: 450px) {
+
+    nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    #content h1 {
+        font-size: 37px;
+    }
+
+    #content > h1 ~ div {
+        display: block;
+    }
+
+    #content > h1 ~ div p:first-of-type {
+        margin-top: 8px;
+    }
+}
